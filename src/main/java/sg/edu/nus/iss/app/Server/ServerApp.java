@@ -24,6 +24,10 @@ public class ServerApp {
             String idiomFile = args[1];
             System.out.println(idiomFile);
 
+            // Get the idiom result file
+            String idiomResultFile = args[2];
+            System.out.println(idiomResultFile);
+
             System.out.printf("Server started at %s\n", portNumber);
 
             // Instantiate server socket object pass in the server
@@ -42,7 +46,7 @@ public class ServerApp {
                         String dataFromClient = dis.readUTF();
 
                         if (dataFromClient.equals("idiom")) {
-                            String randomIdiom = Idiom.getRandomIdiom(idiomFile);
+                            String randomIdiom = Idiom.getRandomIdiom(idiomFile, idiomResultFile);
                             dos.writeUTF("idiom_" + randomIdiom);
                         } else {
                             dos.writeUTF("Invalid Command...");
