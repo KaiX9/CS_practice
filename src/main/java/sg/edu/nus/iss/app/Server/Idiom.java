@@ -10,7 +10,7 @@ import java.util.Random;
 
 public class Idiom {
     
-    public static String getRandomIdiom(String idiomFilePath) {
+    public static String getRandomIdiom(String idiomFilePath ) {
         String randomIdiom = "";
         List<String> idioms = new LinkedList<>();
         try {
